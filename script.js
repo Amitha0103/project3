@@ -1,0 +1,356 @@
+const recommendationsData = {
+    
+    "The Great Gatsby": [
+        
+        "To Kill a Mockingbird by Harper Lee (4.3/5) ",
+        "1984 by George Orwell (4.2/5)",
+        "Pride and Prejudice by Jane Austen (4.3/5)",
+        "The Catcher in the Rye by J.D. Salinger (3.8/5)",
+        "Moby Dick by Herman Melville (3.5/5)"
+    ],
+    
+    "1984": [
+        "Brave New World by Aldous Huxley (4.0/5)",
+        "Fahrenheit 451 by Ray Bradbury (4.1/5)",
+        "The Handmaid's Tale by Margaret Atwood (4.1/5)",
+        "The Giver by Lois Lowry (4.1/5)",
+        "The Road by Cormac McCarthy (4.0/5)"
+    ],
+    "To Kill a Mockingbird": [
+        "The Grapes of Wrath by John Steinbeck (4.0/5)",
+        "The Fault in Our Stars by John Green (4.2/5)",
+        "Little Fires Everywhere by Celeste Ng (4.1/5)",
+        "A Time to Kill by John Grisham (4.1/5)",
+        "The Help by Kathryn Stockett (4.5/5)"
+    ],
+    "Pride and Prejudice": [
+        "Sense and Sensibility by Jane Austen",
+        "Emma by Jane Austen",
+        "North and South by Elizabeth Gaskell",
+        "Jane Eyre by Charlotte Brontë",
+        "Wuthering Heights by Emily Brontë"
+    ],
+    "Moby Dick": [
+        "The Old Man and the Sea by Ernest Hemingway",
+        "Treasure Island by Robert Louis Stevenson",
+        "Heart of Darkness by Joseph Conrad",
+        "The Count of Monte Cristo by Alexandre Dumas",
+        "The Sea-Wolf by Jack London"
+    ],
+    "Brave New World": [
+        "Fahrenheit 451 by Ray Bradbury",
+        "The Giver by Lois Lowry",
+        "The Handmaid's Tale by Margaret Atwood",
+        "1984 by George Orwell",
+        "The Road by Cormac McCarthy"
+    ],
+    
+    "The Fault in Our Stars": [
+        "Looking for Alaska by John Green",
+        "Paper Towns by John Green",
+        "Thirteen Reasons Why by Jay Asher",
+        "Everything, Everything by Nicola Yoon",
+        "The Perks of Being a Wallflower by Stephen Chbosky"
+    ],
+    "The Alchemist": [
+        "Brida by Paulo Coelho",
+        "The Pilgrimage by Paulo Coelho",
+        "The Prophet by Kahlil Gibran",
+        "Siddhartha by Hermann Hesse",
+        "Life of Pi by Yann Martel"
+    ],
+    "The Road": [
+        "The Book Thief by Markus Zusak",
+        "The Old Man and the Sea by Ernest Hemingway",
+        "Station Eleven by Emily St. John Mandel",
+        "The Girl with the Dragon Tattoo by Stieg Larsson",
+        "Catcher in the Rye by J.D. Salinger"
+    ],
+    "The Hobbit": [
+        "The Lord of the Rings by J.R.R. Tolkien",
+        "The Silmarillion by J.R.R. Tolkien",
+        "Harry Potter and the Sorcerer's Stone by J.K. Rowling",
+        "The Chronicles of Narnia by C.S. Lewis",
+        "His Dark Materials by Philip Pullman"
+    ],
+    "Harry Potter and the Sorcerer's Stone": [
+        "Harry Potter and the Chamber of Secrets by J.K. Rowling",
+        "Percy Jackson & The Olympians by Rick Riordan",
+        "The Magicians by Lev Grossman",
+        "The Golden Compass by Philip Pullman",
+        "Artemis Fowl by Eoin Colfer"
+    ],
+    "The Catcher in the Rye": [
+        "The Bell Jar by Sylvia Plath",
+        "On the Road by Jack Kerouac",
+        "Franny and Zooey by J.D. Salinger",
+        "A Separate Peace by John Knowles",
+        "To Kill a Mockingbird by Harper Lee"
+    ],
+    "The Girl on the Train": [
+        "Gone Girl by Gillian Flynn",
+        "Big Little Lies by Liane Moriarty",
+        "The Wife Between Us by Greer Hendricks",
+        "The Couple Next Door by Shari Lapena",
+        "Before I Go to Sleep by S.J. Watson"
+    ],
+    "The Da Vinci Code": [
+        "Angels & Demons by Dan Brown",
+        "The Lost Symbol by Dan Brown",
+        "Inferno by Dan Brown",
+        "Digital Fortress by Dan Brown",
+        "The Girl with the Dragon Tattoo by Stieg Larsson"
+    ],
+    "The Book Thief": [
+        "The Kite Runner by Khaled Hosseini",
+        "A Man Called Ove by Fredrik Backman",
+        "All the Light We Cannot See by Anthony Doerr",
+        "The Nightingale by Kristin Hannah",
+        "Life After Life by Kate Atkinson"
+    ],
+    "The Kite Runner": [
+        "A Thousand Splendid Suns by Khaled Hosseini",
+        "The Things They Carried by Tim O'Brien",
+        "The Book Thief by Markus Zusak",
+        "The Help by Kathryn Stockett",
+        "The Nightingale by Kristin Hannah"
+    ],
+    "The Night Circus": [
+        "The Starless Sea by Erin Morgenstern",
+        "Caraval by Stephanie Garber",
+        "The Invisible Life of Addie LaRue by V.E. Schwab",
+        "The Nightingale by Kristin Hannah",
+        "The Ocean at the End of the Lane by Neil Gaiman"
+    ],
+    "The Silent Patient": [
+        "The Maidens by Alex Michaelides",
+        "Behind Closed Doors by B.A. Paris",
+        "Gone Girl by Gillian Flynn",
+        "The Wife Between Us by Greer Hendricks",
+        "The Couple Next Door by Shari Lapena"
+    ],
+    "Anxious People": [
+        "A Man Called Ove by Fredrik Backman",
+        "The Midnight Library by Matt Haig",
+        "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid",
+        "The Unhoneymooners by Christina Lauren",
+        "Beach Read by Emily Henry"
+    ],
+    "Circe": [
+        "The Song of Achilles by Madeline Miller",
+        "The Witch's Heart by Genevieve Gornichec",
+        "A Court of Thorns and Roses by Sarah J. Maas",
+        "The Priory of the Orange Tree by Samantha Shannon",
+        "The Bear and the Nightingale by Katherine Arden"
+    ],
+    "Normal People": [
+        "Conversations with Friends by Sally Rooney",
+        "The Lying Game by Ruth Ware",
+        "The Vanishing Half by Brit Bennett",
+        "Anxious People by Fredrik Backman",
+        "The Book Thief by Markus Zusak"
+    ],
+    "Eleanor Oliphant Is Completely Fine": [
+        "The Rosie Project by Graeme Simsion",
+        "A Man Called Ove by Fredrik Backman",
+        "The Unlikely Pilgrimage of Harold Fry by Rachel Joyce",
+        "Where the Crawdads Sing by Delia Owens",
+        "The Giver of Stars by Jojo Moyes"
+    ],
+    "The Vanishing Half": [
+        "An American Marriage by Tayari Jones",
+        "Homegoing by Yaa Gyasi",
+        "The Nightingale by Kristin Hannah",
+        "The Help by Kathryn Stockett",
+        "Little Fires Everywhere by Celeste Ng"
+    ],
+    "Where the Crawdads Sing": [
+        "The Great Alone by Kristin Hannah",
+        "Educated by Tara Westover",
+        "Circe by Madeline Miller",
+        "The Night Circus by Erin Morgenstern",
+        "The Silent Patient by Alex Michaelides"
+    ],
+    "The Midnight Library": [
+        "Oona Out of Order by Margarita Montimore",
+        "The Invisible Life of Addie LaRue by V.E. Schwab",
+        "The Vanishing Half by Brit Bennett",
+        "Anxious People by Fredrik Backman",
+        "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid"
+    ],
+    "The Seven Husbands of Evelyn Hugo": [
+        "Daisy Jones & The Six by Taylor Jenkins Reid",
+        "Malibu Rising by Taylor Jenkins Reid",
+        "The Nightingale by Kristin Hannah",
+        "Big Little Lies by Liane Moriarty",
+        "The Wife Between Us by Greer Hendricks"
+    ],
+    "Daisy Jones & The Six": [
+        "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid",
+        "Malibu Rising by Taylor Jenkins Reid",
+        "Everything I Never Told You by Celeste Ng",
+        "The Nightingale by Kristin Hannah",
+        "Anxious People by Fredrik Backman"
+    ],
+    "Malibu Rising": [
+        "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid",
+        "Daisy Jones & The Six by Taylor Jenkins Reid",
+        "The Nightingale by Kristin Hannah",
+        "Little Fires Everywhere by Celeste Ng",
+        "Big Little Lies by Liane Moriarty"
+    ],
+    "The Invisible Life of Addie LaRue": [
+        "The Night Circus by Erin Morgenstern",
+        "Circe by Madeline Miller",
+        "The Midnight Library by Matt Haig",
+        "Oona Out of Order by Margarita Montimore",
+        "The Song of Achilles by Madeline Miller"
+    ],
+    "Educated": [
+        "Becoming by Michelle Obama",
+        "The Glass Castle by Jeannette Walls",
+        "The Immortal Life of Henrietta Lacks by Rebecca Skloot",
+        "An American Marriage by Tayari Jones",
+        "Where the Crawdads Sing by Delia Owens"
+    ],
+    "The Glass Castle": [
+        "Educated by Tara Westover",
+        "The Liar's Club by Mary Karr",
+        "Wild by Cheryl Strayed",
+        "The Immortal Life of Henrietta Lacks by Rebecca Skloot",
+        "The Nightingale by Kristin Hannah"
+    ],
+    "Becoming": [
+        "Educated by Tara Westover",
+        "The Glass Castle by Jeannette Walls",
+        "The Immortal Life of Henrietta Lacks by Rebecca Skloot",
+        "Born a Crime by Trevor Noah",
+        "The Wright Brothers by David McCullough"
+    ],
+    "The Immortal Life of Henrietta Lacks": [
+        "The Glass Castle by Jeannette Walls",
+        "Educated by Tara Westover",
+        "The Wright Brothers by David McCullough",
+        "The Devil in the White City by Erik Larson",
+        "The Soul of America by Jon Meacham"
+    ],
+    "Born a Crime": [
+        "The Color of Law by Richard Rothstein",
+        "The Immortal Life of Henrietta Lacks by Rebecca Skloot",
+        "Becoming by Michelle Obama",
+        "Educated by Tara Westover",
+        "The Glass Castle by Jeannette Walls"
+    ],
+    "A Man Called Ove": [
+        "The Rosie Project by Graeme Simsion",
+        "Anxious People by Fredrik Backman",
+        "Eleanor Oliphant Is Completely Fine by Gail Honeyman",
+        "The Unlikely Pilgrimage of Harold Fry by Rachel Joyce",
+        "The Midnight Library by Matt Haig"
+    ],
+    "The Rosie Project": [
+        "A Man Called Ove by Fredrik Backman",
+        "Eleanor Oliphant Is Completely Fine by Gail Honeyman",
+        "Anxious People by Fredrik Backman",
+        "The Unlikely Pilgrimage of Harold Fry by Rachel Joyce",
+        "The Midnight Library by Matt Haig"
+    ],
+    "The Unlikely Pilgrimage of Harold Fry": [
+        "A Man Called Ove by Fredrik Backman",
+        "Eleanor Oliphant Is Completely Fine by Gail Honeyman",
+        "The Rosie Project by Graeme Simsion",
+        "Anxious People by Fredrik Backman",
+        "The Midnight Library by Matt Haig"
+    ],
+    "Station Eleven": [
+        "The Road by Cormac McCarthy",
+        "The Stand by Stephen King",
+        "The Book Thief by Markus Zusak",
+        "The Night Circus by Erin Morgenstern",
+        "The Girl with All the Gifts by M.R. Carey"
+    ],
+    "The Girl with All the Gifts": [
+        "Station Eleven by Emily St. John Mandel",
+        "The Road by Cormac McCarthy",
+        "The Stand by Stephen King",
+        "The Night Circus by Erin Morgenstern",
+        "World War Z by Max Brooks"
+    ],
+    "The Stand": [
+        "Station Eleven by Emily St. John Mandel",
+        "The Girl with All the Gifts by M.R. Carey",
+        "The Road by Cormac McCarthy",
+        "World War Z by Max Brooks",
+        "The Passage by Justin Cronin"
+    ],
+    "World War Z": [
+        "The Stand by Stephen King",
+        "Station Eleven by Emily St. John Mandel",
+        "The Girl with All the Gifts by M.R. Carey",
+        "The Passage by Justin Cronin",
+        "Feed by Mira Grant"
+    ],
+    "The Passage": [
+        "World War Z by Max Brooks",
+        "The Stand by Stephen King",
+        "Station Eleven by Emily St. John Mandel",
+        "The Girl with All the Gifts by M.R. Carey",
+        "The Road by Cormac McCarthy"
+    ],
+    "The Secret Life of Bees": [
+        "The Help by Kathryn Stockett",
+        "A Man Called Ove by Fredrik Backman",
+        "The Nightingale by Kristin Hannah",
+        "Little Fires Everywhere by Celeste Ng",
+        "Where the Crawdads Sing by Delia Owens"
+    ],
+    "Little Fires Everywhere": [
+        "Everything I Never Told You by Celeste Ng",
+        "The Help by Kathryn Stockett",
+        "The Nightingale by Kristin Hannah",
+        "Anxious People by Fredrik Backman",
+        "Where the Crawdads Sing by Delia Owens"
+    ],
+    "The Help": [
+        "Little Fires Everywhere by Celeste Ng",
+        "The Secret Life of Bees by Sue Monk Kidd",
+        "The Nightingale by Kristin Hannah",
+        "The Book Thief by Markus Zusak",
+        "The Kite Runner by Khaled Hosseini"
+    ],
+    "The Nightingale": [
+        "The Book Thief by Markus Zusak",
+        "Little Fires Everywhere by Celeste Ng",
+        "The Help by Kathryn Stockett",
+        "The Great Alone by Kristin Hannah",
+        "Where the Crawdads Sing by Delia Owens"
+    ],
+    "The Great Alone": [
+        "The Nightingale by Kristin Hannah",
+        "Little Fires Everywhere by Celeste Ng",
+        "The Help by Kathryn Stockett",
+        "The Book Thief by Markus Zusak",
+        "Anxious People by Fredrik Backman"
+    ],
+    
+
+
+    // Add more titles and their recommendations as needed
+};
+
+document.getElementById("recommendBtn").addEventListener("click", function() {
+    const title = document.getElementById("bookTitle").value;
+    const recommendationsDiv = document.getElementById("recommendations");
+    recommendationsDiv.innerHTML = ""; // Clear previous recommendations
+
+    if (recommendationsData[title]) {
+        recommendationsData[title].forEach(function(recommendation) {
+            const recommendationItem = document.createElement("div");
+            recommendationItem.classList.add("recommendation-item");
+            recommendationItem.textContent = recommendation;
+            recommendationsDiv.appendChild(recommendationItem);
+        });
+    } else {
+        recommendationsDiv.innerHTML = "<div class='recommendation-item'>No recommendations found.</div>";
+    }
+});
